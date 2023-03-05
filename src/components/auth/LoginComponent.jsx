@@ -1,14 +1,9 @@
 import React from 'react';
-import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
-import { Password } from 'primereact/password';
-import { Divider } from 'primereact/divider';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-
-//getting username and password for login info
-// const userData = JSON.parse(localStorage.getItem('user'))
 
 
 const LoginComponent = () => {
@@ -16,127 +11,86 @@ const LoginComponent = () => {
   const [password, setPassword] = React.useState("")
   const navigate = useNavigate()
 
-//   const header = <div className="font-bold mb-3">Pick a password</div>;
-//     const footer = (
-//         <>
-//             <Divider />
-//             <p className="mt-2">Suggestions</p>
-//             <ul className="pl-2 ml-2 mt-0 line-height-3">
-//                 <li>At least one lowercase</li>
-//                 <li>At least one uppercase</li>
-//                 <li>At least one numeric</li>
-//                 <li>Minimum 8 characters</li>
-//             </ul>
-//         </>
-//     );
 
-
-  // const FormReset = () =>{
-  //     setEmail("")
-  //     setPassword("")
-  // }
-
+  //function for login
   const handleLogin = (e) => {
     e.preventDefault()
-    let values ={email,password}
-    console.log(values);
-    if (validate()) {
-        toast.success('Logged in successfully')
-    //   localStorage.setItem('LoggedIn',true)
-    //   toast.success("Logged in successfully")
-    //   navigate('/dashboard')
-    }
-    else
-    {
-      toast.error('Invalid email OR password!')
-    }
-    // if (validate()) {
-    //   toast.success('Logged in successfully')
-    //   navigate('/dashboard/employee')
+    let data = { email, password }
+    console.log(data);
+    // if (email === '' || email === null) {
+    //   toast.error('Please enter your email')
     // }
-    // else{
-    //   toast.error("Denied Access")
+    // if (password === '' || password === null) {
+    //   toast.error('Please enter your password')
     // }
+    axios.post('http://localhost:1000/login', data)
+      .then((res) => {
+        if (res.data.message === 'Logged in successfully!') {
+          toast.success(res.data.message);
+          navigate('/dashboard')
+        }
+        else {
+          toast.error(res.data.message)
+        }
+      })
   }
 
-  const validate = () => {
-    let result = true;
-    if (email === '' || email === null) {
-      result = false;
-      toast.warning('Please enter username');
-    }
-    if (password === '' || password === null) {
-      result = false;
-      toast.warning('Please enter password');
-    }
-    // if( email === Email && password === userPassword){
-    //   result = true;
-    // }
-    return result;
-  }
 
 
   return (
     <div className="bg_hero">
-      <div className="flex align-items-center justify-content-center">
-        <div className="surface-card p-4 shadow-2 border-round w-full lg:w-5 lg:h-28rem mt-8">
-          <div className="text-center mb-2">
-            <img
-              src="https://blocks.primereact.org/assets/images/blocks/logos/hyper.svg"
-              alt="logo" height={50} className="mb-3 cursor-pointer"
-            />
-            <div className="text-900 text-xl font-medium mb-3">
-              <i className="pi pi-user mx-3 text-xl" />
-              Log in</div>
-
-            <span className="text-600 font-medium mr-2 line-height-3">Don't have an account ?
-            </span>
-            <Link to="/auth/signup" className="font-medium no-underline text-blue-500 cursor-pointer">Create a new one</Link>
-          </div>
-
-          <form action="#" onSubmit={handleLogin}>
-            <label htmlFor="email" className="block text-900 font-medium mb-2">Email</label>
-            <InputText
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              id="email"
-              name='email'
-              type="email"
-              autoFocus
-              placeholder="Enter the email"
-              className="w-full mb-3"
-            />
-
-            <label htmlFor="password" className="block text-900 font-medium mb-2">Password</label>
-            {/* <Password
-            component={InputText}
-            value={password}
-            name='password'
-            id="password"
-            type="password"
-            placeholder="Password"
-            className="min-w-full mb-3 btn"
-            onChange={(e) => setPassword(e.target.value)} 
-            header={header} 
-            footer={footer} /> */}
-            <InputText
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              name='password'
-              id="password"
-              type="password"
-              placeholder="Password"
-              className="w-full mb-3"
-            />
-
-            <div className="flex align-items-center justify-content-between mb-3">
+      <div className="block-content">
+        <div className="flex">
+          <div className="surface-section w-full md:w-6 p-6 md:p-8">
+            <div className="mb-5">
+            <img src="https://jbembalagenscl.com.br/site/wp-content/gallery/parceiros/frimesa-logo.png" alt="user" height="65" className="mb-3 cursor-pointer" />
+              <div className="text-900 text-3xl font-medium mb-3">Welcome Back</div>
+              <span className="text-600 font-medium mr-2">Login to continue
+              </span>
+              <Link to="/auth/signup" className="font-medium no-underline text-blue-500 cursor-pointer">New user ?</Link>
             </div>
-            <Button
-              label="Log In"
-              icon="pi pi-user"
-              className="w-full"
-            />
-          </form>
+            <form onSubmit={handleLogin}>
+              <label htmlFor="email2" className="block text-900 font-medium mb-2">Email</label>
+              <div className="col-12 md:col-12">
+                <div className="p-inputgroup">
+                  <span className="p-inputgroup-addon">
+                    <i className="pi pi-envelope"></i>
+                  </span>
+                  <InputText
+                    type='email'
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+              </div>
+              <label htmlFor="password2" className="block text-900 font-medium mb-2">Password</label>
+              <div className="col-12 md:col-12">
+                <div className="p-inputgroup">
+                  <span className="p-inputgroup-addon">
+                    <i className="pi pi-eye"></i>
+                  </span>
+                  <InputText
+                    type='password'
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+              <button aria-label="Sign In" className="p-button p-component w-full mt-3 font-bold border-2 bg-black-alpha-90 border-0 transition-colors transition-duration-100 bg-blue-500 hover:text-white p-button-outlined border-round-sm bg-black-alpha-90 text-white border-transparent transition-colors transition-duration-200 bg-blue-500 hover:bg-orange-500 text-white hover:text-gray-900"
+              >
+                <span className="p-button-icon  p-button-icon-left pi pi-user"></span>
+                <span className="p-button-label p-c">Login</span>
+                <span role="presentation" className="p-ink">
+                </span>
+              </button>
+            </form>
+          </div>
+          <div 
+          className="hidden md:inline-flex w-6 h-screen bg-no-repeat bg-cover" 
+          style={{ background: 'url(images/img-23.jpg)' }}>
+          </div>
         </div>
       </div>
 

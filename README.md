@@ -68,3 +68,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## pages to add
+1) contact us page
+copy code from prime block /marketing/contact
+## logo image links
+
+https://jbembalagenscl.com.br/site/wp-content/gallery/parceiros/frimesa-logo.png
+
+https://s3-ap-east-1.amazonaws.com/whub-files/uploads/logo/file/5417b7e83333320002080000/large_foodie-logo-l.png
+
+https://eyesofafoodie.com/wp-content/uploads/2019/11/Eyes-Of-A-Foodie-Logo.png
+
+https://www.concettolabs.com/img/appdetails/foodie/logo.png
+
+https://www.banhcuonnong.net/wp-content/uploads/2019/10/logo-foody.png
