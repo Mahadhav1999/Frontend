@@ -18,7 +18,7 @@ const SignUpComponent = () => {
     e.preventDefault();
     let values = { name, phoneNumber, email, password, confirmPassword };
     console.log(values);
-    if (name && email && phoneNumber && password === confirmPassword) {
+    if (name && email && phoneNumber && password && confirmPassword && password === confirmPassword) {
       axios
         .post("https://dull-shoe-duck.cyclic.app/auth/signup", values)
         .then((res) => {
