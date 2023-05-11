@@ -12,23 +12,20 @@ const LoginComponent = () => {
   const navigate = useNavigate()
 
 
-  //function for login
+  //logic for login
   const handleLogin = (e) => {
     e.preventDefault()
     let data = { email, password }
-    console.log(data);
-    // if (email === '' || email === null) {
-    //   toast.error('Please enter your email')
-    // }
-    // if (password === '' || password === null) {
-    //   toast.error('Please enter your password')
-    // }
     axios.post("https://dull-shoe-duck.cyclic.app/login", data).then((res) => {
       if (res.data.message === "Logged in successfully!") {
         toast.success(res.data.message);
         navigate("/dashboard");
-      } else {
-        toast.error(res.data.message);
+        //checking the user inputs
+      } else if (email==='' || email === null || password==='' || password === null) {
+        toast.error('Please enter valid email and password');
+      }
+      else{
+        toast.error(res.data.message)
       }
     });
   }

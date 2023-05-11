@@ -18,7 +18,14 @@ const SignUpComponent = () => {
     e.preventDefault();
     let values = { name, phoneNumber, email, password, confirmPassword };
     console.log(values);
-    if (name && email && phoneNumber && password && confirmPassword && password === confirmPassword) {
+    if (
+      name &&
+      email &&
+      phoneNumber &&
+      password &&
+      confirmPassword &&
+      password === confirmPassword
+    ) {
       axios
         .post("https://dull-shoe-duck.cyclic.app/auth/signup", values)
         .then((res) => {
@@ -28,12 +35,10 @@ const SignUpComponent = () => {
         .catch((err) => {
           toast.error(err.data.message);
         });
-    } 
-    else {
-      toast.error("All inputs are mandatory");
-    }
-    if (password !== confirmPassword) {
+    } else if (password !== confirmPassword) {
       toast.error("Passwords doesn't match");
+    } else {
+      toast.error("All inputs are mandatory");
     }
   };
 
