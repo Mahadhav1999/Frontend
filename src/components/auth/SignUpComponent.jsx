@@ -28,8 +28,12 @@ const SignUpComponent = () => {
         .catch((err) => {
           toast.error(err.data.message);
         });
-    } else {
+    } 
+    else {
       toast.error("All inputs are mandatory");
+    }
+    if (password !== confirmPassword) {
+      toast.error("Passwords doesn't match");
     }
   };
 
