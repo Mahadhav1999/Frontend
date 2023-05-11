@@ -10,7 +10,7 @@ const About = () => {
 
   // to get the post details 
   let getPostsData = async () =>{
-    let res = await axios.get('http://localhost:1000/posts')
+    let res = await axios.get("https://dull-shoe-duck.cyclic.app/posts");
     let data = await res.data
     // console.log(data);
     setPostsData(data)
@@ -22,7 +22,7 @@ const About = () => {
 
   // to get the users details
   let fetchUsers = async () =>{
-    let res = await axios.get('http://localhost:1000/users')
+    let res = await axios.get("https://dull-shoe-duck.cyclic.app/users");
     let data = await res.data
     console.log(data);
     setUsersData(data)
