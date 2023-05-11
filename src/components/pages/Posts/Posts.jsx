@@ -1,13 +1,12 @@
 import React from 'react'
 import Banner from '../../Common/Banner';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const Posts = () => {
     var name = 'All Posts';
 
     const [posts, setPosts] = React.useState([])
-    const navigate = useNavigate()
 
 
     let fetchPosts = async () => {
