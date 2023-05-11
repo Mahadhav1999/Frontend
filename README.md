@@ -23,7 +23,7 @@ This project is a complete MERN Stack project.
 
 ## Links
 - GitHub URL: [GitHub URL here](https://github.com/Mahadhav1999/Frontend)
-- Live Site URL: [Live site URL here](https://hospital-management-react.netlify.app/)
+- Live Site URL: [Live site URL here](https://foodies-app-react.netlify.app/)
 
 ## Features
 - login and sign up pages for new and existing users
