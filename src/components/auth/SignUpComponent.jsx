@@ -29,7 +29,7 @@ const SignUpComponent = () => {
           toast.error(err.data.message);
         });
     } else {
-      toast.error("Invalid Credentials");
+      toast.error("All inputs are mandatory");
     }
   };
 
