@@ -35,7 +35,7 @@ This project is a complete MERN Stack project.
 - Bootstrap
 - Prime React
 - React (components, react-router, useState, useEffect)
-- Node j
+- Node js
 - Express js
 - MongoDB (for database management)
 
