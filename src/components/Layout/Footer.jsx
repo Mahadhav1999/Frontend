@@ -1,25 +1,34 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 const Footer = () => {
     return (
         <div class='surface-900 p-8'>
             <div class="grid grid-nogutter">
                 <div class="col-12 lg:col-3  text-white">
-                    <h2 class='text-1xl'>Foodies</h2>
+                    <h2 class='text-1xl'>
+                        Foodies
+          <span className='text-3xl mb-2 text-yellow-500'>.</span>
+
+                        </h2>
+                    
                     <span class="text-500 block mt-4 mr-3 line-height-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts</span>
                 </div>
 
                 <div class="flex align-items-center lg:flex-order-1">
                     <a href='#a' class="cursor-pointer border-circle bg-bluegray-100 text-bluegray-500 block inline-flex justify-content-center align-items-center mr-5 no-underline
                     transition-colors transition-duration-200 bg-blue-500 hover:bg-orange-500 hover:text-white 
-                    " style={{ width: '2.5rem', height: '2.5rem' }}>
-                        <i class="pi pi-twitter"></i>
+                    " 
+                    style={{ width: '2.5rem', height: '2.5rem' }}>
+                        <i class="pi pi-twitter text-1xl"  ></i>
                     </a>
-                    <a href='#a' class="cursor-pointer border-circle bg-bluegray-100 text-bluegray-500 block inline-flex justify-content-center align-items-center mr-5 no-underline transition-colors transition-duration-200 bg-blue-500 hover:bg-orange-500 hover:text-white" style={{ width: '2.5rem', height: '2.5rem' }}>
+                    <a href='#a' class="cursor-pointer border-circle bg-bluegray-100 text-bluegray-500 block inline-flex justify-content-center align-items-center mr-5 no-underline transition-colors transition-duration-200 bg-blue-500 hover:bg-orange-500 hover:text-white" 
+                    style={{ width: '2.5rem', height: '2.5rem' }}>
                         <i class="pi pi-facebook"></i>
                     </a>
-                    <a href='#a' class="cursor-pointer border-circle bg-bluegray-100 text-bluegray-500 block inline-flex justify-content-center align-items-center no-underline transition-colors transition-duration-200 bg-blue-500 hover:bg-orange-500 hover:text-white" style={{ width: '2.5rem', height: '2.5rem' }}>
+                    <a href='#a' class="cursor-pointer border-circle bg-bluegray-100 text-bluegray-500 block inline-flex justify-content-center align-items-center no-underline transition-colors transition-duration-200 bg-blue-500 hover:bg-orange-500 hover:text-white" 
+                    style={{ width: '2.5rem', height: '2.5rem' }}>
                         <i class="pi pi-github"></i>
                     </a>
                 </div>
@@ -92,11 +101,10 @@ const Footer = () => {
                 </div>
             </div>
             <div class="surface-900 py-6 lg:py-4 md:px-6 lg:px-8 flex flex-column lg:flex-row justify-content-center align-items-center">
-                <span class="text-500 block mt-4">© 2022-23 Foodies | Stories, Inc. All rights are reserved. Made with
-                    <span className="text-red-500 mx-1">&#10084;</span></span>
+                <span class="text-500 block mt-4">Copyright © 2022-23 Foodies | Stories, Inc. All rights are reserved. Made with
+                    <span className="text-red-500 mx-1">&#10084;</span> by Mahadev.</span>
             </div>
         </div>
-
     )
 }
 

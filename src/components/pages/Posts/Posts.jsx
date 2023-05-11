@@ -22,9 +22,7 @@ const Posts = () => {
     })
 
     //to read the posts 
-    const handleReadPosts = (id) => {
-        navigate('posts/single-food')
-    }
+    
 
     return (
         <>
@@ -39,8 +37,8 @@ const Posts = () => {
                     {
                         posts.map(post => (
                             <div class="md:col-4 lg:col-4 xl:col-3 p-3">
-                                <div class="surface-card w-auto shadow-2 border-round p-3" style={{ borderRadius: '6px' }}>
-                                    <img alt="" src={post.imageUrl} class="mb-3 w-full" />
+                                <div class="w-auto border-round p-3" style={{ borderRadius: '6px' }}>
+                                    <img alt="" src={post.imageUrl} class="mb-3 w-full h-10rem" />
                                     <div class="flex justify-content-between align-items-start">
                                         <div>
                                             <div class="text-xl font-medium text-900 mb-2">{post.title}</div>
@@ -53,14 +51,12 @@ const Posts = () => {
                                     <div class="flex justify-content-center pt-4">
                                         <Link to={`/dashboard/posts/${post._id}`} className='no-underline w-full'>
                                         <button
-                                        aria-label="View" class="text-white p-button p-component p-button-outlined border-round-sm bg-black-alpha-90 border-transparent transition-colors transition-duration-100 bg-blue-500 hover:bg-orange-500 text-white hover:text-white w-full">
+                                        aria-label="View" class="text-white p-button p-component p-button-outlined border-round-sm bg-black-alpha-90 border-transparent transition-colors transition-duration-100 bg-blue-500 hover:bg-orange-500 text-white hover:text-white">
                                             <span class="p-button-icon p-c p-button-icon-left pi pi-search"></span>
                                             <span class="p-button-label p-c">View Post</span>
                                             <span role="presentation" class="p-ink"></span>
                                         </button>
                                         </Link>
-                                        
-
                                     </div>
                                 </div>
                             </div>
