@@ -10,7 +10,9 @@ const SinglePost = () => {
     const params = useParams();
 
     let fetchPosts = async () => {
-        let response = await axios.get(`http://localhost:1000/posts/${params.id}`)
+        let response = await axios.get(
+          `https://dull-shoe-duck.cyclic.app/posts/${params.id}`
+        );
         let data = await response.data
         setSinglePost(data)
     }

@@ -11,7 +11,7 @@ const Posts = () => {
 
 
     let fetchPosts = async () => {
-        let res = await axios.get('http://localhost:1000/posts')
+        let res = await axios.get("https://dull-shoe-duck.cyclic.app/posts");
         let data = await res.data
         console.log(data);
         setPosts(data)

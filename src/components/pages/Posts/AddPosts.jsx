@@ -28,12 +28,14 @@ const AddPosts = () => {
         let data = { author, title, summary, imageUrl, location }
         console.log(data);
         if (author && title && summary && imageUrl && location) {
-            axios.post("http://localhost:1000/add/posts", data)
-                .then(res => {
-                    toast.success(res.data.message)
-                }).catch(err => {
-                    toast.error(err.data.message)
-                })
+            axios
+              .post("https://dull-shoe-duck.cyclic.app/add/posts", data)
+              .then((res) => {
+                toast.success(res.data.message);
+              })
+              .catch((err) => {
+                toast.error(err.data.message);
+              });
         } else {
             toast.error('Oh noo all inputs are mandatory')
         }

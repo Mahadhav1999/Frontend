@@ -20,7 +20,7 @@ const SignUpComponent = () => {
     console.log(values);
     if (name && email && phoneNumber && password === confirmPassword) {
       axios
-        .post("http://localhost:1000/auth/signup", values)
+        .post("https://dull-shoe-duck.cyclic.app/auth/signup", values)
         .then((res) => {
           toast.success(res.data.message);
           navigate("/");

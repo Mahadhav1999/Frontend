@@ -23,16 +23,14 @@ const LoginComponent = () => {
     // if (password === '' || password === null) {
     //   toast.error('Please enter your password')
     // }
-    axios.post('http://localhost:1000/login', data)
-      .then((res) => {
-        if (res.data.message === 'Logged in successfully!') {
-          toast.success(res.data.message);
-          navigate('/dashboard')
-        }
-        else {
-          toast.error(res.data.message)
-        }
-      })
+    axios.post("https://dull-shoe-duck.cyclic.app/login", data).then((res) => {
+      if (res.data.message === "Logged in successfully!") {
+        toast.success(res.data.message);
+        navigate("/dashboard");
+      } else {
+        toast.error(res.data.message);
+      }
+    });
   }
 
 
